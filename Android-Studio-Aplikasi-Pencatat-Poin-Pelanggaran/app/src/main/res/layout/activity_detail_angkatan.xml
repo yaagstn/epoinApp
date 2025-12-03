@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ActivityKelas">
+
+    <!-- 1. Header / Judul Angkatan -->
+    <TextView
+        android:id="@+id/txtHeaderAngkatan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:text="Daftar Siswa Angkatan (Tahun Angkatan)"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- 2. RecyclerView untuk Daftar Siswa -->
+    <!-- Ini akan menampilkan daftar siswa dan mengisi sisa ruang di bawah header -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSiswa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/txtHeaderAngkatan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp"
+        android:background="#EBF4FB"
+        tools:listitem="@layout/activity_daftarsiswa"/>
+
+    <!-- 3. Empty State / Status Data (Posisi di tengah layar) -->
+
+    <!-- Ilustrasi Empty State (IC_EMPTY harus sudah ada di drawable) -->
+    <ImageView
+        android:id="@+id/imgempty2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/txtStatusData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewSiswa"
+        app:srcCompat="@drawable/ic_empty"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:contentDescription="Ilustrasi data kosong" />
+
+    <!-- Teks Status (Memuat / Kosong / Error) -->
+    <TextView
+        android:id="@+id/txtStatusData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memuat data..."
+        android:alpha="0.5"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgempty2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"/>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

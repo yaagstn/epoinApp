@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Aplikasi Pencatat Pelanggaran</string>
+    <string name="judul">ePoin\nAplikasi Pencatatan Pelanggaran</string>
+    <string name="btnmasuk">Masuk</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="total">Total Poin Pelanggaran</string>
+    <string name="tambah">Tambah Pelanggaran</string>
+    <string name="nama">Nama</string>
+    <string name="kelas">Angkatan</string>
+    <string name="poin">Poin</string>
+    <string name="jenis_pelanggaran">Jenis Pelanggaran</string>
+    <string name="btntambah">Tambah</string>
+    <string name="daftarKelas">Daftar Angkatan</string>
+    <string name="kosong">Belum ada data!</string>
+    <string name="pelanggaranbaru">Tambah Pelanggaran Baru</string>
+    <string name="btndelete">Hapus</string>
+    <string name="hapussemua">Hapus Semua Data</string>
+    <string-array name="pelanggaran">
+        <item>Pilih Jenis Pelanggaran</item>
+        <item>Merokok</item>
+        <item>Bolos</item>
+        <item>Membuat Kekacauan</item>
+        <item>Merusak Fasilitas</item>
+        <item>Tawuran</item>
+        <item>Berkelahi</item>
+        <item>Bullying</item>
+        <item>Asusila</item>
+    </string-array>
+    <string-array name="kelas">
+        <item>Pilih Angkatan</item>
+        <item>Angkatan 2023</item>
+        <item>Angkatan 2024</item>
+        <item>Angkatan 2025</item>
+    </string-array>
+</resources>

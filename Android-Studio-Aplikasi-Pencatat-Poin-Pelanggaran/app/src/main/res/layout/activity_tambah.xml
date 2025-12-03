@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBF4FB"
+    tools:context=".ActivityTambah">
+
+    <!-- ScrollView agar konten bisa digulir -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:background="#EBF4FB"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- JUDUL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tambah Pelanggaran"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Angkatan"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp" />
+
+            <!-- SPINNER KELAS (KOTAK PENUH) -->
+            <Spinner
+                android:id="@+id/spnKelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/style_spinner"
+                android:spinnerMode="dropdown"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:entries="@array/kelas"
+                android:layout_marginBottom="15dp" /> <!-- Jarak sebelum input Nama -->
+
+
+            <!-- LABEL NAMA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp" />
+
+            <!-- INPUT NAMA (GARIS BAWAH) -->
+            <AutoCompleteTextView
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Ketik Nama Siswa"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- ============================================== -->
+            <!-- PERUBAHAN SELESAI -->
+            <!-- ============================================== -->
+
+
+            <!-- LABEL JENIS PELANGGARAN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Pelanggaran"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp" />
+
+            <!-- SPINNER JENIS PELANGGARAN (KOTAK PENUH) -->
+            <Spinner
+                android:id="@+id/spnPoin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/style_spinner"
+                android:spinnerMode="dropdown"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <!-- LABEL POIN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poin Pelanggaran"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp" />
+
+            <!-- OUTPUT POIN (KOTAK PENUH) -->
+            <TextView
+                android:id="@+id/txtPoinPelanggaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="12dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/style_edittext" />
+
+            <!-- LABEL TANGGAL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Pelanggaran"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp" />
+
+            <!-- INPUT TANGGAL (GARIS BAWAH) -->
+            <EditText
+                android:id="@+id/tanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pilih Tanggal"
+                android:focusable="false"
+                android:clickable="true"
+                android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- TOMBOL TAMBAH -->
+            <Button
+                android:id="@+id/btnTambah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tambah"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAVIGATION SELALU DI BAWAH -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#BAD9EE"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@android:color/black"
+        app:menu="@menu/menu" />
+</RelativeLayout>

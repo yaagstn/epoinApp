@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:id="@+id/mainLayout">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFD190"
+            android:padding="12dp">
+
+            <!-- ID Pelanggaran (Mungkin disembunyikan, tapi berguna untuk debug) -->
+            <TextView
+                android:id="@+id/data_id_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nama Siswa -->
+            <TextView
+                android:id="@+id/data_nama_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Muhammad Eri Setyawan"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/poin_txt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Jenis Pelanggaran (BARU DITAMBAHKAN) -->
+            <TextView
+                android:id="@+id/jenis_pelanggaran_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Jenis Pelanggaran: Bolos Sekolah"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@+id/data_nama_txt"
+                app:layout_constraintEnd_toStartOf="@+id/poin_txt"
+                app:layout_constraintTop_toBottomOf="@+id/data_nama_txt" />
+
+
+            <!-- Kelas -->
+            <TextView
+                android:id="@+id/data_kelas_txt"
+                android:layout_width="220dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:text="Angkatan: Angkatan 2024"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/data_nama_txt"
+                app:layout_constraintTop_toBottomOf="@+id/jenis_pelanggaran_txt" />
+
+            <!-- Tanggal (BARU DITAMBAHKAN) -->
+            <TextView
+                android:id="@+id/tanggal_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23/10/2025"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@+id/data_nama_txt"
+                app:layout_constraintTop_toBottomOf="@+id/data_kelas_txt" />
+
+
+            <!-- Poin -->
+            <TextView
+                android:id="@+id/poin_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#E53935"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Label Poin -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poin"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/poin_txt"
+                app:layout_constraintTop_toBottomOf="@+id/poin_txt" />
+
+            <TextView
+                android:id="@+id/txtTotalPoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Total Poin: 0"
+                android:textColor="#B71C1C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poin_txt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

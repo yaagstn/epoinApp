@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBF4FB"
+    android:padding="24dp"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header: Judul Halaman -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat Akun Baru"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masukkan detail Anda di bawah ini untuk memulai."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- 1. Input NIP -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_nip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NIP (Nomor Induk Pegawai)"
+                android:inputType="number"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                /> <!-- DITUTUP DENGAN BENAR (/>) -->
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 2. Input Nama Lengkap -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Lengkap"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                /> <!-- DITUTUP DENGAN BENAR (/>) -->
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 3. Input Username -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 4. Input Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 5. Input Konfirmasi Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Konfirmasi Password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tombol Register -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DAFTAR SEKARANG"
+            app:backgroundTint="#FFAB36"
+            android:paddingVertical="12dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Progress Bar (Untuk Indikator Loading) -->
+        <!-- ID ini harus sesuai dengan ID yang digunakan di RegisterActivity.java -->
+        <ProgressBar
+            android:id="@+id/pb_register_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:indeterminateTint="?attr/colorPrimary"
+            /> <!-- DITUTUP DENGAN BENAR (/>) -->
+
+        <!-- Link ke Halaman Login -->
+        <TextView
+            android:id="@+id/tv_link_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sudah punya akun? Masuk di sini."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

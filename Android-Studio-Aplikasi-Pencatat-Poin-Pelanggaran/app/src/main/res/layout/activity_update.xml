@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="ActivityUpdate">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EBF4FB"
+        android:text="Ubah Data Pelanggaran Siswa"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nama Kelas (Spinner atau EditText) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama:"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/etUpdateNamaKelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contoh: X RPL 1"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Jenis Pelanggaran (Spinner atau EditText) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Pelanggaran:"
+        android:textStyle="bold"/>
+    <Spinner
+        android:id="@+id/spinnerUpdateJenisPelanggaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/pelanggaran"
+    android:padding="12dp"
+    android:background="@android:drawable/editbox_background"
+    android:layout_marginBottom="12dp"/>
+
+    <!-- Tanggal Pelanggaran -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Pelanggaran:"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/etUpdateTanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pilih Tanggal (DD/MM/YYYY)"
+        android:focusable="false"
+        android:clickable="true"
+        android:inputType="none"
+        android:drawableEnd="@android:drawable/ic_menu_today"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Poin Pelanggaran (Biasanya hanya ditampilkan/TextView) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poin Pelanggaran:"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvUpdatePoinPelanggaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/editbox_background"/>
+
+    <!-- Tombol Aksi -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnUbah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ubah Data"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnHapus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hapus Data"
+            android:backgroundTint="#F44336"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
