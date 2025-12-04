@@ -39,7 +39,7 @@ public class ActivityDaftarKelas extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.list);
 
         // Data untuk ListView (Gunakan nama yang lebih deskriptif: classLevels)
-        String[] classLevels = new String[]{
+        String[] classLevel = new String[]{
                 "Angkatan 2023", "Angkatan 2024", "Angkatan 2025"
         };
 
